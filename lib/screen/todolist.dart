@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/model/todo.dart';
+import 'package:flutter_app/screen/tododetail.dart';
 import 'package:flutter_app/util/dbhelper.dart';
 
 class TodoList extends StatefulWidget {
@@ -29,7 +30,7 @@ class TodoListState extends State<TodoList> {
               color: Colors.white,
               elevation: 2,
               child: ListTile(
-                  onTap: () => debugPrint('Tapped'),
+                  onTap: () => navigateToDetail(list[position]),
                   title: Text(this.list[position].title.toString()),
                   subtitle: Text(this.list[position].date),
                   leading: CircleAvatar(
@@ -52,5 +53,10 @@ class TodoListState extends State<TodoList> {
       list = todos;
       count = result.length;
     });
+  }
+
+  void navigateToDetail(Todo todo) async {
+    await Navigator.push(
+        context, MaterialPageRoute(builder: (context) => TodoDetail(todo)));
   }
 }
