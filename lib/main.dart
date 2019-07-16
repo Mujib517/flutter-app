@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './newItem.dart';
+import 'package:flutter_app/screen/todolist.dart';
 
 void main() => runApp(new HelloFlutterApp());
 
@@ -12,12 +12,12 @@ class HelloFlutterApp extends StatelessWidget {
         home: Scaffold(
             appBar: AppBar(
               title: Text(
-                'My Cool Apple',
+                'My Cool App',
                 style: TextStyle(
                     fontWeight: FontWeight.w300, fontFamily: 'Oxygen'),
               ),
               backgroundColor: Colors.deepOrangeAccent,
             ),
-            body: NewItem()));
+            body: TodoList()));
   }
 }
