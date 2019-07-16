@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './button.dart';
 
 class About extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -7,12 +8,6 @@ class About extends StatelessWidget {
             alignment: Alignment.topRight,
             width: 192,
             height: 96,
-            child: Text(
-              'Pizza',
-              style: TextStyle(
-                  fontFamily: 'Oxygen',
-                  fontSize: 30,
-                  fontWeight: FontWeight.w700),
-            )));
+            child: ButtonWidget()));
   }
 }
