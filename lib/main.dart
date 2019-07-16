@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import './about.dart';
-import './input.dart';
+import './newItem.dart';
 
 void main() => runApp(new HelloFlutterApp());
 
@@ -19,6 +18,6 @@ class HelloFlutterApp extends StatelessWidget {
               ),
               backgroundColor: Colors.deepOrangeAccent,
             ),
-            body: Input()));
+            body: NewItem()));
   }
 }
