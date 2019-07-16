@@ -5,18 +5,32 @@ class Input extends StatefulWidget {
 }
 
 class _InputState extends State<Input> {
-  String name="";
+  String _name = "";
+  String _currency = 'Dollar';
+  final _currencies = ['Dollar', 'Euro', 'Pound'];
 
   Widget build(BuildContext context) {
     return Container(
       child: Column(
         children: <Widget>[
           TextField(
-            onChanged: (String val) => setState(() => name = val),
+            decoration: InputDecoration(hintText: 'Enter Your Name'),
+            onChanged: (String val) => setState(() => _name = val),
           ),
-          Text('Hello ' + name + ' !')
+          DropdownButton<String>(
+            value: _currency,
+            items: getItems(),
+            onChanged: (String val) => setState(() => _currency = val),
+          ),
+          Text('Hello ' + _name)
         ],
       ),
     );
+  }
+  getItems() {
+    return _currencies
+        .map((String val) =>
+            DropdownMenuItem<String>(value: val, child: Text(val)))
+        .toList();
   }
 }
